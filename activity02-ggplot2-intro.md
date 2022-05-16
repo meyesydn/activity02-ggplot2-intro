@@ -200,6 +200,17 @@ my *hint*:
 -   Re-create the boxplot with color that you did above, then
 -   *Add* another geometry layer for the jitterplot.
 
+``` r
+ggplot(data = penguins, mapping = aes(x = flipper_length_mm, y = species,  color = 'orange', fill = 'group')) +
+  geom_jitter() + geom_boxplot()
+```
+
+    ## Warning: Removed 2 rows containing non-finite values (stat_boxplot).
+
+    ## Warning: Removed 2 rows containing missing values (geom_point).
+
+![](activity02-ggplot2-intro_files/figure-gfm/box-jitter-combined-1.png)<!-- -->
+
 Play around with doing the jitterplot laid over the boxplot and the
 boxplot laid over the jitterplot. Which do you prefer? Why?
 
@@ -216,6 +227,17 @@ but not the individual boxplots - you want the boxplots to be the
 default white coloring. In the code chunk below, explore different
 methods to try to create this plot. A hint, all `geom_*` have a
 `mapping` argument.
+
+``` r
+ggplot(data = penguins, mapping = aes(x = flipper_length_mm, y = species,  color = 'orange', fill = 'group')) +
+  geom_boxplot()+ geom_jitter(color = 'blue', fill = 'yellow')
+```
+
+    ## Warning: Removed 2 rows containing non-finite values (stat_boxplot).
+
+    ## Warning: Removed 2 rows containing missing values (geom_point).
+
+![](activity02-ggplot2-intro_files/figure-gfm/jitter-colored-only-1.png)<!-- -->
 
 In the above code chunk, continue to play around with having the
 aesthetics mapped in the different layers. For example, how does having
