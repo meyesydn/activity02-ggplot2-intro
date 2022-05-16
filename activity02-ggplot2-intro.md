@@ -229,8 +229,8 @@ methods to try to create this plot. A hint, all `geom_*` have a
 `mapping` argument.
 
 ``` r
-ggplot(data = penguins, mapping = aes(x = flipper_length_mm, y = species,  color = 'orange', fill = 'group')) +
-  geom_boxplot()+ geom_jitter(color = 'blue', fill = 'yellow')
+ggplot(data = penguins, mapping = aes(x = flipper_length_mm, y = species,  )) +
+  geom_boxplot()+ geom_jitter(mapping=aes(color=species))
 ```
 
     ## Warning: Removed 2 rows containing non-finite values (stat_boxplot).
